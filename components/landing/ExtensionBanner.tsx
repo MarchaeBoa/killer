@@ -1,4 +1,4 @@
-import { Chrome, Puzzle, Star } from "lucide-react";
+import { Chrome, Hexagon, Puzzle, Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
@@ -24,8 +24,8 @@ function ExtensionMockup() {
         <div className="relative p-4">
           <div className="absolute right-4 top-4 w-56 rounded-2xl border border-border bg-white p-3 shadow-soft-lg">
             <div className="flex items-center gap-2">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-sm font-extrabold text-white">
-                {BRAND.charAt(0)}
+              <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary text-white">
+                <Hexagon className="h-4 w-4" />
               </span>
               <div className="leading-tight">
                 <p className="text-sm font-bold text-ink">{BRAND}</p>

@@ -1,4 +1,4 @@
-# Dropix — Dropshipping Spy-Tool Landing Page
+# Dropspy — Dropshipping Spy-Tool Landing Page
 
 A high-conversion, fully responsive marketing landing page for a dropshipping
 product/ad spy SaaS. Built with the App Router, TypeScript, Tailwind CSS, and

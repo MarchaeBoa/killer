@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandTile } from "@/components/ui/BrandMark";
 import { BRAND } from "@/lib/brand";
 
 const COLUMNS: { title: string; links: string[] }[] = [
@@ -30,9 +31,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-base font-extrabold text-white">
-                {BRAND.charAt(0)}
-              </span>
+              <BrandTile />
               <span className="text-lg font-extrabold tracking-tightest text-white">
                 {BRAND}
               </span>

@@ -46,7 +46,7 @@ export function DashboardPreview() {
               <span className="h-2.5 w-2.5 rounded-full bg-[#FFBD2E]" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#28C840]" />
               <span className="mx-auto rounded-full bg-white px-4 py-1 text-xs font-medium text-ink-muted">
-                app.dropix.com/products
+                app.dropspy.com/products
               </span>
             </div>
 

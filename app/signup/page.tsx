@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { BrandTile } from "@/components/ui/BrandMark";
 import { BRAND } from "@/lib/brand";
 
 export default function SignupPage() {
@@ -16,9 +17,7 @@ export default function SignupPage() {
         </Link>
 
         <div className="mt-6 flex items-center gap-2.5">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-base font-extrabold text-white">
-            {BRAND.charAt(0)}
-          </span>
+          <BrandTile />
           <span className="text-lg font-extrabold tracking-tightest text-ink">
             {BRAND}
           </span>

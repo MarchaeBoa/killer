@@ -4,20 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { BRAND, NAV_LINKS } from "@/lib/brand";
-
-function BrandMark() {
-  return (
-    <Link href="/" className="flex items-center gap-2.5">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-base font-extrabold text-white shadow-[0_6px_16px_rgba(29,63,230,0.35)]">
-        {BRAND.charAt(0)}
-      </span>
-      <span className="text-lg font-extrabold tracking-tightest text-ink">
-        {BRAND}
-      </span>
-    </Link>
-  );
-}
+import { BrandMark } from "@/components/ui/BrandMark";
+import { NAV_LINKS } from "@/lib/brand";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
