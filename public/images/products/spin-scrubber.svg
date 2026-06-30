@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Electric spin scrubber set">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/><stop offset="1" stop-color="#E2EAFF"/>
+    </linearGradient>
+    <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#3A5BF0"/><stop offset="1" stop-color="#1733C4"/>
+    </linearGradient>
+    <radialGradient id="brush" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#FFE08A"/><stop offset="1" stop-color="#F5A623"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.5"/>
+  <ellipse cx="200" cy="210" rx="58" ry="9" fill="#0B1220" opacity="0.06"/>
+  <!-- bubbles -->
+  <g fill="#9FB0FF" opacity="0.6">
+    <circle cx="120" cy="74" r="9"/><circle cx="150" cy="56" r="6"/><circle cx="288" cy="150" r="10"/><circle cx="300" cy="120" r="6"/>
+  </g>
+  <g fill="#fff" opacity="0.7"><circle cx="117" cy="71" r="3"/><circle cx="285" cy="147" r="3.4"/></g>
+  <!-- rotation arrows -->
+  <path d="M120 150 A50 50 0 0 1 150 104" stroke="#1D3FE6" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.55"/>
+  <path d="M150 104 l-12 -1 5 11z" fill="#1D3FE6" opacity="0.55"/>
+  <!-- handle -->
+  <rect x="208" y="70" width="22" height="96" rx="11" fill="url(#handle)" transform="rotate(24 219 118)"/>
+  <rect x="206" y="150" width="26" height="26" rx="8" fill="#152CB0" transform="rotate(24 219 163)"/>
+  <!-- brush head -->
+  <circle cx="160" cy="138" r="40" fill="#E9EEFB" stroke="#D5DCEF" stroke-width="2"/>
+  <circle cx="160" cy="138" r="30" fill="url(#brush)"/>
+  <g stroke="#E8821E" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M160 110 V120"/><path d="M160 156 V166"/><path d="M132 138 H142"/><path d="M178 138 H188"/>
+    <path d="M141 119 l7 7"/><path d="M179 157 l-7 -7"/><path d="M179 119 l-7 7"/><path d="M141 157 l7 -7"/>
+  </g>
+  <circle cx="160" cy="138" r="9" fill="#fff"/>
+</svg>

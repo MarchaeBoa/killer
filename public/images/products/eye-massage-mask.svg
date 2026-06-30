@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Heated eye massage mask">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/><stop offset="1" stop-color="#E2EAFF"/>
+    </linearGradient>
+    <linearGradient id="mask" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#3A5BF0"/><stop offset="1" stop-color="#1D3FE6"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.5"/>
+  <!-- heat waves -->
+  <g stroke="#FF6B6B" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M150 70 C144 62 156 56 150 48"/>
+    <path d="M200 64 C194 56 206 50 200 42"/>
+    <path d="M250 70 C244 62 256 56 250 48"/>
+  </g>
+  <ellipse cx="200" cy="200" rx="90" ry="12" fill="#0B1220" opacity="0.05"/>
+  <!-- strap -->
+  <path d="M110 130 C90 130 86 150 96 168" stroke="#C7D0E8" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <path d="M290 130 C310 130 314 150 304 168" stroke="#C7D0E8" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <!-- mask body -->
+  <path d="M112 110 C112 96 132 90 200 90 C268 90 288 96 288 110 L288 150 C288 168 264 176 200 176 C136 176 112 168 112 150 Z" fill="url(#mask)"/>
+  <path d="M196 90 L204 90 L204 176 L196 176 Z" fill="#152CB0" opacity="0.4"/>
+  <!-- eye cups (closed eyes) -->
+  <path d="M138 132 q22 16 44 0" stroke="#BFD0FF" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M218 132 q22 16 44 0" stroke="#BFD0FF" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="200" cy="160" r="6" fill="#FF6B6B"/>
+</svg>
