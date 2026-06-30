@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1d3fe6;
+  --primary-hover: #1733c4;
+  --primary-soft: #eef2ff;
+  --surface: #ffffff;
+  --surface-tint: #f5f7ff;
+  --ink: #0b1220;
+  --ink-muted: #5b6472;
+  --border: #e6e8f0;
+  --success: #16a34a;
+  --accent-pink: #ff4d8d;
+  --accent-coral: #ff6b6b;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-extrabold tracking-tightest text-ink;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background-color: rgba(29, 63, 230, 0.15);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Hand-drawn underline used under highlighted hero words */
+  .squiggle-underline {
+    position: relative;
+    white-space: nowrap;
+  }
+  .squiggle-underline > svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.28em;
+    width: 100%;
+    height: 0.42em;
+    overflow: visible;
+  }
+
+  .text-gradient-badge {
+    background-image: linear-gradient(
+      90deg,
+      var(--accent-pink),
+      var(--accent-coral)
+    );
+  }
+}
+
+/* Respect reduced-motion: disable smooth scroll + animations */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
