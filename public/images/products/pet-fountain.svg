@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Smart pet water fountain">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/><stop offset="1" stop-color="#E2EAFF"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#7FB0FF"/><stop offset="1" stop-color="#2E6BFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.5"/>
+  <ellipse cx="200" cy="206" rx="84" ry="14" fill="#0B1220" opacity="0.06"/>
+  <!-- bowl base -->
+  <path d="M118 158 C118 150 152 144 200 144 C248 144 282 150 282 158 L274 188 C274 200 240 206 200 206 C160 206 126 200 126 188 Z" fill="#FFFFFF" stroke="#D5DCEF" stroke-width="2"/>
+  <ellipse cx="200" cy="158" rx="82" ry="15" fill="url(#water)"/>
+  <ellipse cx="200" cy="156" rx="70" ry="11" fill="#9FC4FF" opacity="0.7"/>
+  <!-- central tower + arc stream -->
+  <rect x="188" y="96" width="24" height="58" rx="8" fill="#E9EEFB" stroke="#D5DCEF" stroke-width="2"/>
+  <path d="M200 96 C200 80 226 80 230 100 C232 116 222 128 214 140" stroke="url(#water)" stroke-width="7" stroke-linecap="round" fill="none"/>
+  <circle cx="231" cy="104" r="4" fill="#2E6BFF"/>
+  <!-- paw print -->
+  <g fill="#1D3FE6">
+    <ellipse cx="200" cy="120" rx="9" ry="7"/>
+    <circle cx="188" cy="108" r="3.6"/><circle cx="200" cy="104" r="3.6"/><circle cx="212" cy="108" r="3.6"/>
+  </g>
+</svg>

@@ -1,10 +1,13 @@
 import { MoreHorizontal, TrendingUp } from "lucide-react";
 import { Sparkline } from "./Sparkline";
 import { Button } from "./Button";
+import { asset } from "@/lib/asset";
 
 export type Product = {
   title: string;
   emoji: string;
+  /** Path (under public/) to the product illustration. Falls back to emoji. */
+  image?: string;
   stock: number;
   supplier: string;
   country: string;
@@ -53,15 +56,28 @@ export function ProductCard({
       {/* Image */}
       <div
         className={cx(
-          "relative flex items-center justify-center bg-gradient-to-br",
+          "relative flex items-center justify-center overflow-hidden bg-gradient-to-br",
           imageBg,
           compact ? "h-24" : "h-32",
         )}
       >
-        <span className={compact ? "text-4xl" : "text-5xl"} aria-hidden="true">
-          {product.emoji}
-        </span>
-        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-semibold text-success">
+        {product.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={asset(product.image)}
+            alt={product.title}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <span
+            className={compact ? "text-4xl" : "text-5xl"}
+            aria-hidden="true"
+          >
+            {product.emoji}
+          </span>
+        )}
+        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-semibold text-success backdrop-blur-sm">
           <TrendingUp className="h-3 w-3" /> Hot
         </span>
       </div>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Wireless handheld car vacuum">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/><stop offset="1" stop-color="#E2EAFF"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#3A5BF0"/><stop offset="1" stop-color="#1733C4"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.5"/>
+  <ellipse cx="206" cy="208" rx="76" ry="11" fill="#0B1220" opacity="0.06"/>
+  <!-- nozzle -->
+  <path d="M96 104 L150 116 L150 140 L96 130 Z" fill="#2A3566"/>
+  <rect x="86" y="100" width="14" height="36" rx="4" fill="#1D3FE6"/>
+  <!-- dust line -->
+  <g stroke="#9FB0FF" stroke-width="3" stroke-linecap="round" opacity="0.7">
+    <path d="M82 110 H64"/><path d="M80 120 H58"/><path d="M82 130 H66"/>
+  </g>
+  <!-- main body -->
+  <path d="M150 102 H236 C254 102 264 116 264 134 C264 152 254 162 236 162 H150 Z" fill="url(#body)"/>
+  <rect x="166" y="116" width="56" height="30" rx="8" fill="#9FD0FF" opacity="0.9"/>
+  <rect x="166" y="116" width="56" height="30" rx="8" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
+  <!-- handle -->
+  <path d="M236 134 C272 134 282 150 282 172 L282 196 C282 204 274 208 266 208 C258 208 252 204 252 196 L252 168 C252 158 246 156 236 156 Z" fill="#2A3566"/>
+  <circle cx="200" cy="100" r="9" fill="#FF4D8D"/>
+  <rect x="194" y="94" width="12" height="12" rx="3" fill="#fff" opacity="0.85"/>
+</svg>

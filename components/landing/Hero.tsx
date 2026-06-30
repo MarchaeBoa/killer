@@ -2,6 +2,7 @@ import { Play } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
+import { asset } from "@/lib/asset";
 
 function Squiggle() {
   return (
@@ -88,6 +89,23 @@ export function Hero() {
               </span>
               Watch video
             </button>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.24}>
+          <div className="relative mt-14 w-full max-w-3xl sm:mt-16">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -inset-x-6 -bottom-6 top-4 -z-10 rounded-[2.2rem] bg-primary-soft/70 blur-2xl"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={asset("/images/hero-showcase.svg")}
+              alt="Dropspy dashboard scanning winning products and ads in real time"
+              width={640}
+              height={440}
+              className="w-full rounded-[1.6rem] shadow-soft-lg"
+            />
           </div>
         </Reveal>
       </div>

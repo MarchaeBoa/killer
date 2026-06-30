@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Anti-gravity humidifier emitting mist">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0F6"/><stop offset="1" stop-color="#FFE2EC"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#FBE3ED"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.45"/>
+  <!-- mist -->
+  <g stroke="#FF4D8D" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.55">
+    <path d="M178 86 C170 74 186 66 178 54"/>
+    <path d="M200 80 C192 66 208 58 200 44"/>
+    <path d="M222 86 C214 74 230 66 222 54"/>
+  </g>
+  <g fill="#FF4D8D" opacity="0.5">
+    <circle cx="172" cy="48" r="3"/><circle cx="208" cy="38" r="3.4"/><circle cx="230" cy="50" r="2.6"/>
+  </g>
+  <ellipse cx="200" cy="208" rx="58" ry="11" fill="#0B1220" opacity="0.05"/>
+  <!-- device body -->
+  <path d="M156 120 C156 104 174 96 200 96 C226 96 244 104 244 120 L240 188 C240 200 222 206 200 206 C178 206 160 200 160 188 Z" fill="url(#body)" stroke="#F4CDDC" stroke-width="2"/>
+  <ellipse cx="200" cy="118" rx="44" ry="14" fill="#FFD2E2"/>
+  <ellipse cx="200" cy="116" rx="18" ry="6" fill="#FF4D8D" opacity="0.85"/>
+  <!-- water drop emblem -->
+  <path d="M200 138 C208 150 212 156 212 162 a12 12 0 0 1 -24 0 c0 -6 4 -12 12 -24z" fill="#FF6B9D"/>
+  <circle cx="196" cy="160" r="3.5" fill="#fff" opacity="0.8"/>
+</svg>

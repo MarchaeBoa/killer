@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Foldable sunset projection lamp">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF0F0"/><stop offset="1" stop-color="#FFE4E8"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop stop-color="#FFD36E"/><stop offset="0.55" stop-color="#FF8A5B"/><stop offset="1" stop-color="#FF5E7E"/>
+    </radialGradient>
+    <linearGradient id="halo" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFB36B" stop-opacity="0.6"/><stop offset="1" stop-color="#FF5E7E" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <!-- projected glow cone -->
+  <path d="M200 150 L70 60 L330 60 Z" fill="url(#halo)" opacity="0.5"/>
+  <circle cx="200" cy="96" r="66" fill="url(#halo)" opacity="0.6"/>
+  <!-- sun disc -->
+  <circle cx="200" cy="100" r="46" fill="url(#sun)"/>
+  <circle cx="200" cy="100" r="46" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
+  <g stroke="#fff" stroke-width="3" opacity="0.5" stroke-linecap="round">
+    <path d="M168 112 H232"/><path d="M176 124 H224"/>
+  </g>
+  <!-- lamp base -->
+  <ellipse cx="200" cy="210" rx="48" ry="9" fill="#0B1220" opacity="0.06"/>
+  <rect x="170" y="178" width="60" height="30" rx="12" fill="#2A3566"/>
+  <rect x="186" y="160" width="28" height="26" rx="6" fill="#3A4677"/>
+  <circle cx="200" cy="193" r="6" fill="#FF8A5B"/>
+</svg>
