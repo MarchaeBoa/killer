@@ -4,7 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Posture Corrector Pro Belt",
     emoji: "🧍",
-    image: "/images/products-posture.jpg",
+    image: "https://images.unsplash.com/photo-1591028705014-73bde1c11745?w=400&q=80",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -16,7 +16,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Mini Portable Blender USB",
     emoji: "🥤",
-    image: "/images/products-blender.jpg",
+    image: "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=400&q=80",
     stock: 2870,
     supplier: "Dropi",
     country: "Colombia",
@@ -28,7 +28,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "LED Galaxy Star Projector",
     emoji: "🌌",
-    image: "/images/products-projector.jpg",
+    image: "https://images.unsplash.com/photo-1614859324967-bdf413c43562?w=400&q=80",
     stock: 6190,
     supplier: "MasterShop",
     country: "United States",
@@ -40,7 +40,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Magnetic Phone Mount 360°",
     emoji: "📱",
-    image: "/images/products-phonemount.jpg",
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&q=80",
     stock: 1845,
     supplier: "Shopify",
     country: "Chile",
@@ -52,7 +52,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Anti-Gravity Humidifier",
     emoji: "💧",
-    image: "/images/products-humidifier.jpg",
+    image: "https://images.unsplash.com/photo-1547482887-e2d9d0a36f91?w=400&q=80",
     stock: 3410,
     supplier: "Dropi",
     country: "Peru",
@@ -65,7 +65,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Smart Pet Water Fountain",
     emoji: "🐾",
-    image: "/images/products-petfountain.jpg",
+    image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=400&q=80",
     stock: 5021,
     supplier: "MasterShop",
     country: "Mexico",
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Foldable Sunset Lamp",
     emoji: "🌅",
-    image: "/images/products-sunsetlamp.jpg",
+    image: "https://images.unsplash.com/photo-1636487658589-c8e5e31f7fd1?w=400&q=80",
     stock: 2290,
     supplier: "Dropi",
     country: "Ecuador",
@@ -90,7 +90,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Wireless Car Vacuum Kit",
     emoji: "🚗",
-    image: "/images/products-carvacuum.jpg",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80",
     stock: 4115,
     supplier: "Shopify",
     country: "United States",
@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Heated Eye Massage Mask",
     emoji: "😴",
-    image: "/images/products-eyemassager.jpg",
+    image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=400&q=80",
     stock: 3680,
     supplier: "Dropi",
     country: "Argentina",
@@ -114,7 +114,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Electric Spin Scrubber Set",
     emoji: "🧽",
-    image: "/images/products-scrubber.jpg",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80",
     stock: 5540,
     supplier: "MasterShop",
     country: "Brazil",
