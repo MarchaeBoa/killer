@@ -4,6 +4,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Posture Corrector Pro Belt",
     emoji: "🧍",
+    image: "/images/products-posture.jpg",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -15,6 +16,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Mini Portable Blender USB",
     emoji: "🥤",
+    image: "/images/products-blender.jpg",
     stock: 2870,
     supplier: "Dropi",
     country: "Colombia",
@@ -26,6 +28,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "LED Galaxy Star Projector",
     emoji: "🌌",
+    image: "/images/products-projector.jpg",
     stock: 6190,
     supplier: "MasterShop",
     country: "United States",
@@ -37,6 +40,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Magnetic Phone Mount 360°",
     emoji: "📱",
+    image: "/images/products-phonemount.jpg",
     stock: 1845,
     supplier: "Shopify",
     country: "Chile",
@@ -48,6 +52,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Anti-Gravity Humidifier",
     emoji: "💧",
+    image: "/images/products-humidifier.jpg",
     stock: 3410,
     supplier: "Dropi",
     country: "Peru",
@@ -60,6 +65,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Smart Pet Water Fountain",
     emoji: "🐾",
+    image: "/images/products-petfountain.jpg",
     stock: 5021,
     supplier: "MasterShop",
     country: "Mexico",
@@ -71,6 +77,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Foldable Sunset Lamp",
     emoji: "🌅",
+    image: "/images/products-sunsetlamp.jpg",
     stock: 2290,
     supplier: "Dropi",
     country: "Ecuador",
@@ -83,6 +90,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Wireless Car Vacuum Kit",
     emoji: "🚗",
+    image: "/images/products-carvacuum.jpg",
     stock: 4115,
     supplier: "Shopify",
     country: "United States",
@@ -94,6 +102,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Heated Eye Massage Mask",
     emoji: "😴",
+    image: "/images/products-eyemassager.jpg",
     stock: 3680,
     supplier: "Dropi",
     country: "Argentina",
@@ -105,6 +114,7 @@ export const PRODUCTS: Product[] = [
   {
     title: "Electric Spin Scrubber Set",
     emoji: "🧽",
+    image: "/images/products-scrubber.jpg",
     stock: 5540,
     supplier: "MasterShop",
     country: "Brazil",

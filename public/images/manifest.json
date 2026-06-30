@@ -1,0 +1,19 @@
+{
+  "_comment": "Image slots for the landing page. `npm run fetch-images` reads this, queries the Pexels API, and downloads each photo here. Components reference /images/<file>.",
+  "images": [
+    { "file": "products-posture.jpg",    "query": "posture corrector back support brace", "orientation": "square" },
+    { "file": "products-blender.jpg",     "query": "portable blender smoothie bottle",     "orientation": "square" },
+    { "file": "products-projector.jpg",   "query": "galaxy star projector night light",    "orientation": "square" },
+    { "file": "products-phonemount.jpg",  "query": "car phone holder mount",               "orientation": "square" },
+    { "file": "products-humidifier.jpg",  "query": "humidifier essential oil diffuser",    "orientation": "square" },
+    { "file": "products-petfountain.jpg", "query": "pet water fountain cat drinking",      "orientation": "square" },
+    { "file": "products-sunsetlamp.jpg",  "query": "sunset lamp projector bedroom",        "orientation": "square" },
+    { "file": "products-carvacuum.jpg",   "query": "handheld car vacuum cleaner",          "orientation": "square" },
+    { "file": "products-eyemassager.jpg", "query": "eye massager mask relax",              "orientation": "square" },
+    { "file": "products-scrubber.jpg",    "query": "electric spin scrubber cleaning brush","orientation": "square" },
+    { "file": "ad-beauty.jpg",            "query": "beauty skincare serum woman hand",     "orientation": "square" },
+    { "file": "ad-kitchen.jpg",           "query": "kitchen gadget cooking hands",         "orientation": "square" },
+    { "file": "tiktok-lipkit.jpg",        "query": "lipstick makeup cosmetics flatlay",    "orientation": "square" },
+    { "file": "store-banner.jpg",         "query": "happy woman shopping bags",            "orientation": "landscape" }
+  ]
+}

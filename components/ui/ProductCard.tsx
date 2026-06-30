@@ -1,10 +1,13 @@
 import { MoreHorizontal, TrendingUp } from "lucide-react";
 import { Sparkline } from "./Sparkline";
 import { Button } from "./Button";
+import { SmartImage } from "./SmartImage";
 
 export type Product = {
   title: string;
   emoji: string;
+  /** Local product photo under public/images (populated by `npm run fetch-images`). */
+  image?: string;
   stock: number;
   supplier: string;
   country: string;
@@ -53,15 +56,25 @@ export function ProductCard({
       {/* Image */}
       <div
         className={cx(
-          "relative flex items-center justify-center bg-gradient-to-br",
+          "relative flex items-center justify-center overflow-hidden bg-gradient-to-br",
           imageBg,
           compact ? "h-24" : "h-32",
         )}
       >
-        <span className={compact ? "text-4xl" : "text-5xl"} aria-hidden="true">
-          {product.emoji}
-        </span>
-        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-success/10 px-2 py-0.5 text-[11px] font-semibold text-success">
+        <SmartImage
+          src={product.image}
+          alt={product.title}
+          className="absolute inset-0 h-full w-full object-cover"
+          fallback={
+            <span
+              className={compact ? "text-4xl" : "text-5xl"}
+              aria-hidden="true"
+            >
+              {product.emoji}
+            </span>
+          }
+        />
+        <span className="absolute right-2.5 top-2.5 inline-flex items-center gap-1 rounded-full bg-white/85 px-2 py-0.5 text-[11px] font-semibold text-success shadow-sm backdrop-blur-sm">
           <TrendingUp className="h-3 w-3" /> Hot
         </span>
       </div>

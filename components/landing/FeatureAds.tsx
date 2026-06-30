@@ -2,12 +2,14 @@ import { Heart, MessageCircle, Share2, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
+import { SmartImage } from "@/components/ui/SmartImage";
 
 type Ad = {
   page: string;
   badge: string;
   badgeClass: string;
   emoji: string;
+  image?: string;
   caption: string;
   likes: number;
   comments: number;
@@ -21,6 +23,7 @@ const ADS: Ad[] = [
     badge: "f",
     badgeClass: "bg-[#1877F2]",
     emoji: "✨",
+    image: "/images/ad-beauty.jpg",
     caption: "This serum sold out 3 times this month 🔥",
     likes: 12400,
     comments: 893,
@@ -32,7 +35,8 @@ const ADS: Ad[] = [
     badge: "TT",
     badgeClass: "bg-ink",
     emoji: "🏋️",
-    caption: "The resistance band everyone is talking about",
+    image: "/images/ad-kitchen.jpg",
+    caption: "The kitchen gadget everyone is talking about",
     likes: 48200,
     comments: 1540,
     shares: 6700,
@@ -75,15 +79,22 @@ function AdCard({ ad, className }: { ad: Ad; className?: string }) {
       <p className="px-3 pb-2 text-xs text-ink">{ad.caption}</p>
 
       <div
-        className={`relative flex h-36 items-center justify-center bg-gradient-to-br ${
+        className={`relative flex h-36 items-center justify-center overflow-hidden bg-gradient-to-br ${
           ad.tone === "pink"
             ? "from-accent-pink/20 to-accent-coral/20"
             : "from-primary-soft to-surface-tint"
         }`}
       >
-        <span className="text-5xl" aria-hidden="true">
-          {ad.emoji}
-        </span>
+        <SmartImage
+          src={ad.image}
+          alt={`${ad.page} ad creative`}
+          className="absolute inset-0 h-full w-full object-cover"
+          fallback={
+            <span className="text-5xl" aria-hidden="true">
+              {ad.emoji}
+            </span>
+          }
+        />
         <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-[11px] font-semibold text-white shadow-soft">
           <ShoppingBag className="h-3.5 w-3.5" />
           Buy now

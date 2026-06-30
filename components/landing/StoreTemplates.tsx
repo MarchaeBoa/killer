@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Search, ShoppingCart, Star, Truck, Wallet } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
+import { SmartImage } from "@/components/ui/SmartImage";
 
 type ThemeKey = "Bluewave" | "Sunset" | "Goldenflare";
 
@@ -119,9 +120,17 @@ export function StoreTemplates() {
             </div>
 
             {/* hero banner */}
-            <div
-              className={`relative bg-gradient-to-r ${t.banner} px-6 py-10 text-white transition-all duration-500 sm:px-10 sm:py-14`}
-            >
+            <div className="relative overflow-hidden px-6 py-10 text-white sm:px-10 sm:py-14">
+              {/* real photo behind a theme-tinted overlay so the tabs still swap color */}
+              <SmartImage
+                src="/images/store-banner.jpg"
+                alt=""
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div
+                className={`absolute inset-0 bg-gradient-to-r ${t.banner} opacity-90 transition-all duration-500`}
+              />
+              <div className="relative">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
                 Guaranteed purchases
               </p>
@@ -158,6 +167,7 @@ export function StoreTemplates() {
                   <Wallet className="h-4 w-4" />
                   PAY ON DELIVERY
                 </span>
+              </div>
               </div>
             </div>
 

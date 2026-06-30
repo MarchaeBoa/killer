@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { Sparkline } from "@/components/ui/Sparkline";
+import { SmartImage } from "@/components/ui/SmartImage";
 
 function TikTokCard() {
   return (
@@ -14,10 +15,17 @@ function TikTokCard() {
       </div>
 
       <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-soft-lg">
-        <div className="relative flex h-48 items-center justify-center bg-gradient-to-br from-accent-pink/15 to-accent-coral/15">
-          <span className="text-7xl" aria-hidden="true">
-            💄
-          </span>
+        <div className="relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-accent-pink/15 to-accent-coral/15">
+          <SmartImage
+            src="/images/tiktok-lipkit.jpg"
+            alt="Velvet Matte Lip Kit"
+            className="absolute inset-0 h-full w-full object-cover"
+            fallback={
+              <span className="text-7xl" aria-hidden="true">
+                💄
+              </span>
+            }
+          />
           <span className="absolute left-3 top-3 grid h-9 w-9 place-items-center rounded-xl bg-ink text-xs font-extrabold text-white">
             TT
           </span>
