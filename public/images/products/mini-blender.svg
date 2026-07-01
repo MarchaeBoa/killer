@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none" role="img" aria-label="Mini portable USB blender">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0F4FF"/><stop offset="1" stop-color="#E2EAFF"/>
+    </linearGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEFB"/>
+    </linearGradient>
+    <linearGradient id="juice" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#FF8FB3"/><stop offset="1" stop-color="#FF4D8D"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="240" fill="url(#bg)"/>
+  <circle cx="200" cy="120" r="92" fill="#fff" opacity="0.5"/>
+  <ellipse cx="200" cy="208" rx="62" ry="11" fill="#0B1220" opacity="0.06"/>
+  <!-- lid -->
+  <rect x="166" y="42" width="68" height="16" rx="6" fill="#1D3FE6"/>
+  <rect x="184" y="30" width="32" height="16" rx="6" fill="#3A5BF0"/>
+  <!-- cup body -->
+  <path d="M168 60 H232 L226 168 C226 178 214 184 200 184 C186 184 174 178 174 168 Z" fill="url(#cup)" stroke="#D5DCEF" stroke-width="2"/>
+  <!-- juice -->
+  <path d="M176 104 H224 L221 166 C221 175 211 180 200 180 C189 180 179 175 179 166 Z" fill="url(#juice)"/>
+  <circle cx="190" cy="120" r="6" fill="#fff" opacity="0.6"/>
+  <circle cx="210" cy="138" r="4" fill="#fff" opacity="0.5"/>
+  <!-- base + blade -->
+  <rect x="172" y="184" width="56" height="22" rx="8" fill="#1D3FE6"/>
+  <rect x="186" y="206" width="28" height="9" rx="4" fill="#152CB0"/>
+  <path d="M196 92 l8 8 M204 92 l-8 8" stroke="#C7D0E8" stroke-width="3" stroke-linecap="round"/>
+</svg>

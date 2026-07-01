@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 440" fill="none" role="img" aria-label="Dropspy product-research dashboard with a scanning radar">
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="640" y2="440" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F5F7FF"/>
+    </linearGradient>
+    <linearGradient id="sweep" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1D3FE6" stop-opacity="0.35"/><stop offset="1" stop-color="#1D3FE6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bluechip" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#3A5BF0"/><stop offset="1" stop-color="#1D3FE6"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#16A34A"/><stop offset="1" stop-color="#1D3FE6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- soft backdrop -->
+  <rect x="40" y="56" width="560" height="360" rx="34" fill="#EEF2FF"/>
+  <!-- window -->
+  <rect x="24" y="24" width="592" height="372" rx="26" fill="url(#frame)" stroke="#E6E8F0" stroke-width="2"/>
+  <!-- top bar -->
+  <circle cx="52" cy="54" r="6" fill="#FF6058"/><circle cx="72" cy="54" r="6" fill="#FFBD2E"/><circle cx="92" cy="54" r="6" fill="#28C840"/>
+  <rect x="230" y="44" width="200" height="22" rx="11" fill="#F5F7FF" stroke="#E6E8F0" stroke-width="1.5"/>
+  <rect x="252" y="51" width="140" height="8" rx="4" fill="#C7D0E8"/>
+  <line x1="24" y1="80" x2="616" y2="80" stroke="#E6E8F0" stroke-width="2"/>
+
+  <!-- search + filter row -->
+  <rect x="48" y="100" width="300" height="34" rx="12" fill="#F5F7FF" stroke="#E6E8F0" stroke-width="1.5"/>
+  <circle cx="68" cy="117" r="6" fill="none" stroke="#5B6472" stroke-width="2.5"/><line x1="72" y1="121" x2="77" y2="126" stroke="#5B6472" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="86" y="113" width="120" height="8" rx="4" fill="#C7D0E8"/>
+  <rect x="362" y="100" width="86" height="34" rx="12" fill="url(#bluechip)"/>
+  <rect x="380" y="113" width="50" height="8" rx="4" fill="#fff" opacity="0.9"/>
+  <rect x="462" y="100" width="106" height="34" rx="12" fill="#fff" stroke="#E6E8F0" stroke-width="1.5"/>
+  <rect x="480" y="113" width="70" height="8" rx="4" fill="#C7D0E8"/>
+
+  <!-- radar scan (left) -->
+  <g transform="translate(176 268)">
+    <circle r="98" fill="#EEF2FF"/>
+    <circle r="98" fill="none" stroke="#C7D6FF" stroke-width="2"/>
+    <circle r="68" fill="none" stroke="#C7D6FF" stroke-width="2"/>
+    <circle r="38" fill="none" stroke="#C7D6FF" stroke-width="2"/>
+    <line x1="-98" y1="0" x2="98" y2="0" stroke="#D8E0FF" stroke-width="1.5"/>
+    <line x1="0" y1="-98" x2="0" y2="98" stroke="#D8E0FF" stroke-width="1.5"/>
+    <path d="M0 0 L0 -98 A98 98 0 0 1 84 -50 Z" fill="url(#sweep)"/>
+    <circle cx="44" cy="-30" r="7" fill="#FF4D8D"/>
+    <circle cx="-36" cy="40" r="5" fill="#1D3FE6"/>
+    <circle cx="20" cy="58" r="4" fill="#16A34A"/>
+    <!-- magnifier handle -->
+    <line x1="70" y1="70" x2="112" y2="112" stroke="#1D3FE6" stroke-width="10" stroke-linecap="round"/>
+    <circle r="98" fill="none" stroke="#1D3FE6" stroke-width="4"/>
+  </g>
+
+  <!-- product tiles (right) -->
+  <g>
+    <rect x="356" y="158" width="100" height="104" rx="14" fill="#fff" stroke="#E6E8F0" stroke-width="1.5"/>
+    <rect x="356" y="158" width="100" height="46" rx="14" fill="#EAF0FF"/>
+    <circle cx="406" cy="183" r="15" fill="#3A5BF0"/>
+    <rect x="370" y="216" width="56" height="7" rx="3.5" fill="#C7D0E8"/>
+    <rect x="370" y="232" width="36" height="7" rx="3.5" fill="#1D3FE6"/>
+
+    <rect x="468" y="158" width="100" height="104" rx="14" fill="#fff" stroke="#E6E8F0" stroke-width="1.5"/>
+    <rect x="468" y="158" width="100" height="46" rx="14" fill="#FFE7F0"/>
+    <circle cx="518" cy="183" r="15" fill="#FF4D8D"/>
+    <rect x="482" y="216" width="56" height="7" rx="3.5" fill="#C7D0E8"/>
+    <rect x="482" y="232" width="36" height="7" rx="3.5" fill="#FF4D8D"/>
+
+    <rect x="356" y="276" width="100" height="104" rx="14" fill="#fff" stroke="#E6E8F0" stroke-width="1.5"/>
+    <rect x="356" y="276" width="100" height="46" rx="14" fill="#EAF0FF"/>
+    <circle cx="406" cy="301" r="15" fill="#1733C4"/>
+    <rect x="370" y="334" width="56" height="7" rx="3.5" fill="#C7D0E8"/>
+    <rect x="370" y="350" width="36" height="7" rx="3.5" fill="#1D3FE6"/>
+
+    <rect x="468" y="276" width="100" height="104" rx="14" fill="#fff" stroke="#E6E8F0" stroke-width="1.5"/>
+    <rect x="468" y="276" width="100" height="46" rx="14" fill="#FFEFE7"/>
+    <circle cx="518" cy="301" r="15" fill="#FF6B6B"/>
+    <rect x="482" y="334" width="56" height="7" rx="3.5" fill="#C7D0E8"/>
+    <rect x="482" y="350" width="36" height="7" rx="3.5" fill="#FF6B6B"/>
+  </g>
+
+  <!-- floating trend card -->
+  <g>
+    <rect x="70" y="150" width="172" height="92" rx="16" fill="#fff" stroke="#E6E8F0" stroke-width="1.5" filter="none"/>
+    <rect x="86" y="166" width="80" height="8" rx="4" fill="#C7D0E8"/>
+    <text x="86" y="206" font-family="Inter, sans-serif" font-size="26" font-weight="800" fill="#0B1220">$458,235</text>
+    <polyline points="92,232 110,224 126,228 142,214 158,218 176,200 196,206 218,186" fill="none" stroke="url(#spark)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="218" cy="186" r="4" fill="#16A34A"/>
+  </g>
+
+  <!-- Hot badge -->
+  <g transform="translate(250 300)">
+    <rect x="-2" y="-16" width="92" height="32" rx="16" fill="#16A34A"/>
+    <path d="M14 -8 l4 8 4 -8" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="30" y="5" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#fff">Hot</text>
+  </g>
+</svg>
