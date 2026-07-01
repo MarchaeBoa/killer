@@ -1,7 +1,32 @@
 # public/images
 
-Real product photos for the landing page live here. They are **not** committed
-as part of the initial build — generate them locally with the Pexels API:
+## Exact product photos (from the reference screenshot)
+
+The dashboard preview shows five specific branded products. Drop each exact
+photo here using the filename below and it appears automatically (the card
+falls back to an emoji/gradient until the file exists):
+
+| Product                              | Filename                     |
+| ------------------------------------ | ---------------------------- |
+| URO Probiotico Vaginal               | `products-uro.png`           |
+| Pack 2 Cajas Mascarilla Naturaful    | `products-naturaful.png`     |
+| Alfombra Peluda 1.50 x 2mt           | `products-alfombra.png`      |
+| Espiral Panel de Boxeo               | `products-boxeo.png`         |
+| Python Gel                           | `products-python.png`        |
+
+Square images (roughly 1:1) look best. After adding them:
+
+```bash
+git add public/images && git commit -m "Add exact product photos" && git push
+```
+
+If you'd rather point the cards at hosted image URLs instead of local files,
+set each product's `image` to the full `https://…` URL in `lib/products.ts` —
+`SmartImage` passes absolute URLs straight through.
+
+---
+
+The rest of the landing-page photos can be generated locally with the Pexels API:
 
 ```bash
 # free key from https://www.pexels.com/api/
