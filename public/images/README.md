@@ -20,6 +20,22 @@ Square images (roughly 1:1) look best. After adding them:
 git add public/images && git commit -m "Add exact product photos" && git push
 ```
 
+## Platform logos & extension graphic
+
+The logo strip and the blue "extensión" banner also read from image slots
+(styled placeholders show until each file exists):
+
+| Slot | Filename |
+| ---- | -------- |
+| Dropi logo | `logos/dropi.png` |
+| Shopify logo | `logos/shopify.png` |
+| TikTok Shop logo | `logos/tiktok-shop.png` |
+| Master logo | `logos/master.png` |
+| Chrome + extension graphic (banner) | `extension-graphic.png` |
+
+Logos look best as transparent PNG/SVG, roughly 32–36 px tall. The banner
+graphic can be a transparent PNG around 400–500 px wide.
+
 If you'd rather point the cards at hosted image URLs instead of local files,
 set each product's `image` to the full `https://…` URL in `lib/products.ts` —
 `SmartImage` passes absolute URLs straight through.
