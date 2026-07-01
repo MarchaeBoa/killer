@@ -25,16 +25,17 @@ git add public/images && git commit -m "Add exact product photos" && git push
 The logo strip and the blue "extensión" banner also read from image slots
 (styled placeholders show until each file exists):
 
-| Slot | Filename |
-| ---- | -------- |
-| Dropi logo | `logos/dropi.png` |
-| Shopify logo | `logos/shopify.png` |
-| TikTok Shop logo | `logos/tiktok-shop.png` |
-| Master logo | `logos/master.png` |
-| Chrome + extension graphic (banner) | `extension-graphic.png` |
+| Slot | Filename | Status |
+| ---- | -------- | ------ |
+| Dropi logo | `logos/dropi.png` | ✓ added |
+| Shopify logo | `logos/shopify.png` | ✓ added |
+| TikTok Shop logo | `logos/tiktok-shop.png` | ✓ added |
+| Master logo | `logos/master.png` | ✓ added |
+| Chrome logo (banner) | `chrome.jpg` | ✓ added |
 
-Logos look best as transparent PNG/SVG, roughly 32–36 px tall. The banner
-graphic can be a transparent PNG around 400–500 px wide.
+The banner graphic pairs the real Chrome logo above with a built blue app icon
+(the extension). To use a real extension icon instead, drop it in and swap the
+`Hexagon` block in `components/landing/ExtensionBanner.tsx`.
 
 If you'd rather point the cards at hosted image URLs instead of local files,
 set each product's `image` to the full `https://…` URL in `lib/products.ts` —

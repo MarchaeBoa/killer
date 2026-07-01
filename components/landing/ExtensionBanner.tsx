@@ -6,15 +6,20 @@ import { SmartImage } from "@/components/ui/SmartImage";
 import { BRAND } from "@/lib/brand";
 
 /**
- * Placeholder shown until the real hero graphic is dropped in at
- * public/images/extension-graphic.png — a Chrome disc overlapping the
- * extension's app icon, matching the reference layout.
+ * The banner graphic: the real Google Chrome logo (public/images/chrome.jpg,
+ * with a lucide fallback) inside a white app tile, overlapping the extension's
+ * blue app icon — matching the reference layout.
  */
-function ExtensionGraphicFallback() {
+function ExtensionGraphic() {
   return (
     <div className="relative flex items-center justify-center">
-      <div className="grid h-32 w-32 place-items-center rounded-3xl bg-white shadow-soft-lg">
-        <Chrome className="h-16 w-16 text-primary" />
+      <div className="grid h-32 w-32 place-items-center rounded-3xl bg-white p-4 shadow-soft-lg">
+        <SmartImage
+          src="/images/chrome.jpg"
+          alt="Google Chrome"
+          className="h-full w-full object-contain"
+          fallback={<Chrome className="h-16 w-16 text-primary" />}
+        />
       </div>
       <div className="-ml-8 grid h-28 w-28 place-items-center rounded-3xl bg-gradient-to-br from-primary to-[#152CB0] shadow-soft-lg ring-4 ring-white/25">
         <Hexagon className="h-14 w-14 fill-white/10 text-white" />
@@ -62,12 +67,7 @@ export function ExtensionBanner() {
               {/* Graphic bleeding toward the right edge */}
               <div className="relative flex justify-center lg:justify-end">
                 <div className="lg:translate-x-6 lg:translate-y-2">
-                  <SmartImage
-                    src="/images/extension-graphic.png"
-                    alt="Chrome extension"
-                    className="w-full max-w-md object-contain"
-                    fallback={<ExtensionGraphicFallback />}
-                  />
+                  <ExtensionGraphic />
                 </div>
               </div>
             </div>
