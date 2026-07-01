@@ -8,11 +8,11 @@ falls back to an emoji/gradient until the file exists):
 
 | Product                              | Filename                     |
 | ------------------------------------ | ---------------------------- |
-| URO Probiotico Vaginal               | `products-uro.jpg`           |
-| Pack 2 Cajas Mascarilla Naturaful    | `products-naturaful.jpg`     |
-| Alfombra Peluda 1.50 x 2mt           | `products-alfombra.jpg`      |
-| Espiral Panel de Boxeo               | `products-boxeo.jpg`         |
-| Python Gel                           | `products-python.jpg`        |
+| URO Probiotico Vaginal               | `products-uro.png`           |
+| Pack 2 Cajas Mascarilla Naturaful    | `products-naturaful.png`     |
+| Alfombra Peluda 1.50 x 2mt           | `products-alfombra.png`      |
+| Espiral Panel de Boxeo               | `products-boxeo.png`         |
+| Python Gel                           | `products-python.png`        |
 
 Square images (roughly 1:1) look best. After adding them:
 

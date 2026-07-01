@@ -13,7 +13,7 @@ const BASE_PRODUCTS: Product[] = [
   {
     title: "URO Probiotico Vaginal",
     emoji: "🌸",
-    image: "/images/products-uro.jpg",
+    image: "/images/products-uro.png",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -26,7 +26,7 @@ const BASE_PRODUCTS: Product[] = [
   {
     title: "Pack 2 Cajas Mascarilla Naturaful",
     emoji: "✨",
-    image: "/images/products-naturaful.jpg",
+    image: "/images/products-naturaful.png",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -39,7 +39,7 @@ const BASE_PRODUCTS: Product[] = [
   {
     title: "Alfombra Peluda 1.50 x 2mt",
     emoji: "🧶",
-    image: "/images/products-alfombra.jpg",
+    image: "/images/products-alfombra.png",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -51,7 +51,7 @@ const BASE_PRODUCTS: Product[] = [
   {
     title: "Espiral Panel de Boxeo",
     emoji: "🥊",
-    image: "/images/products-boxeo.jpg",
+    image: "/images/products-boxeo.png",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
@@ -63,7 +63,7 @@ const BASE_PRODUCTS: Product[] = [
   {
     title: "Python Gel",
     emoji: "🐍",
-    image: "/images/products-python.jpg",
+    image: "/images/products-python.png",
     stock: 4532,
     supplier: "Dropi",
     country: "Mexico",
