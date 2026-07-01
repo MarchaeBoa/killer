@@ -43,18 +43,18 @@ export function ExtensionBanner() {
               <div className="text-white">
                 <Badge variant="translucent">
                   <Puzzle className="h-3.5 w-3.5" />
-                  Instala nuestra extensión
+                  Install our extension
                 </Badge>
                 <h2 className="mt-5 max-w-md text-3xl text-white sm:text-4xl">
-                  Descubre productos ganadores en segundos.
+                  Discover winning products in seconds.
                 </h2>
                 <p className="mt-4 max-w-md text-base text-white/80">
-                  Instala la extensión de Chrome de {BRAND} y lleva tu tienda al
-                  siguiente nivel.
+                  Install the {BRAND} Chrome extension and take your store to the
+                  next level.
                 </p>
                 <div className="mt-7">
                   <Button href="/signup" variant="white" size="lg">
-                    Gratis y lista para usar
+                    Free and ready to use
                   </Button>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export function ExtensionBanner() {
                 <div className="lg:translate-x-6 lg:translate-y-2">
                   <SmartImage
                     src="/images/extension-graphic.png"
-                    alt="Extensión de Chrome"
+                    alt="Chrome extension"
                     className="w-full max-w-md object-contain"
                     fallback={<ExtensionGraphicFallback />}
                   />

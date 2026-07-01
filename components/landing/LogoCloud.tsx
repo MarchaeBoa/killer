@@ -26,7 +26,7 @@ export function LogoCloud() {
       <div className="container-page">
         <Reveal>
           <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
-            Acceso a todas las plataformas
+            Access to all platforms
           </p>
         </Reveal>
 
