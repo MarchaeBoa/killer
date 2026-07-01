@@ -125,9 +125,9 @@ export function DashboardPreview() {
                     : "mt-5 grid grid-cols-1 gap-3.5 sm:grid-cols-2"
                 }
               >
-                {PRODUCTS.slice(0, view === "grid" ? 10 : 6).map((product) => (
+                {PRODUCTS.slice(0, view === "grid" ? 10 : 6).map((product, i) => (
                   <ProductCard
-                    key={product.title}
+                    key={`${product.title}-${i}`}
                     product={product}
                     compact
                   />
