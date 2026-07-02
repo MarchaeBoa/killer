@@ -1,8 +1,11 @@
+"use client";
+
 import { Heart, MessageCircle, Share2, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { useT } from "@/lib/i18n";
 
 type Ad = {
   page: string;
@@ -10,7 +13,7 @@ type Ad = {
   badgeClass: string;
   emoji: string;
   image?: string;
-  caption: string;
+  captionKey: "captionSerum" | "captionKitchen";
   likes: number;
   comments: number;
   shares: number;
@@ -24,7 +27,7 @@ const ADS: Ad[] = [
     badgeClass: "bg-[#1877F2]",
     emoji: "✨",
     image: "/images/ad-beauty.jpg",
-    caption: "This serum sold out 3 times this month 🔥",
+    captionKey: "captionSerum",
     likes: 12400,
     comments: 893,
     shares: 2100,
@@ -36,7 +39,7 @@ const ADS: Ad[] = [
     badgeClass: "bg-ink",
     emoji: "🥕",
     image: "/images/ad-kitchen.jpg",
-    caption: "The kitchen gadget everyone is talking about",
+    captionKey: "captionKitchen",
     likes: 48200,
     comments: 1540,
     shares: 6700,
@@ -60,6 +63,7 @@ function AdMetric({
 }
 
 function AdCard({ ad, className }: { ad: Ad; className?: string }) {
+  const t = useT();
   return (
     <div
       className={`w-64 overflow-hidden rounded-2xl border border-border bg-white shadow-soft-lg ${className ?? ""}`}
@@ -72,11 +76,11 @@ function AdCard({ ad, className }: { ad: Ad; className?: string }) {
         </span>
         <div className="leading-tight">
           <p className="text-sm font-bold text-ink">{ad.page}</p>
-          <p className="text-[11px] text-ink-muted">Sponsored</p>
+          <p className="text-[11px] text-ink-muted">{t.ads.sponsored}</p>
         </div>
       </div>
 
-      <p className="px-3 pb-2 text-xs text-ink">{ad.caption}</p>
+      <p className="px-3 pb-2 text-xs text-ink">{t.ads[ad.captionKey]}</p>
 
       <div
         className={`relative flex h-36 items-center justify-center overflow-hidden bg-gradient-to-br ${
@@ -97,7 +101,7 @@ function AdCard({ ad, className }: { ad: Ad; className?: string }) {
         />
         <span className="absolute bottom-2.5 right-2.5 inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-[11px] font-semibold text-white shadow-soft">
           <ShoppingBag className="h-3.5 w-3.5" />
-          Buy now
+          {t.ads.buyNow}
         </span>
       </div>
 
@@ -129,6 +133,7 @@ function AdCluster() {
 }
 
 export function FeatureAds() {
+  const t = useT();
   return (
     <section id="ads" className="scroll-mt-24 bg-surface py-16 sm:py-24">
       <div className="container-page grid items-center gap-12 lg:grid-cols-2">
@@ -139,25 +144,24 @@ export function FeatureAds() {
         <Reveal delay={0.1} className="order-1 lg:order-2">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              Ad library
+              {t.ads.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
-              <span className="text-primary">Ads</span>{" "}
-              <span className="text-ink">that Work</span>
+              <span className="text-primary">{t.ads.titleA}</span>{" "}
+              <span className="text-ink">{t.ads.titleB}</span>
             </h2>
             <p className="mt-5 max-w-md text-lg text-ink-muted">
-              Explore over{" "}
+              {t.ads.textPre}
               <CountUp
                 value={100000}
                 separator
                 className="font-semibold text-ink"
-              />{" "}
-              exclusive ads from the platforms that matter, with engagement data
-              and tracking.
+              />
+              {t.ads.textPost}
             </p>
             <div className="mt-8">
               <Button href="/signup" size="lg">
-                Get started
+                {t.common.getStarted}
               </Button>
             </div>
           </div>

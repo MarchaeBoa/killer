@@ -4,13 +4,15 @@
  */
 export const BRAND = "Dropspy";
 
-export const BRAND_TAGLINE = "Find products & ads in one platform";
+export const BRAND_TAGLINE =
+  "Encuentra productos y anuncios en una sola plataforma";
 
 export const BRAND_DESCRIPTION =
-  "Spy on TikTok & Meta ads, track real-time stock and sales, and find winning products instantly with AI-powered search.";
+  "Espía anuncios de TikTok y Meta, rastrea stock y ventas en tiempo real, y encuentra productos ganadores al instante con búsqueda impulsada por IA.";
 
+/** Section anchors for the navbar. Labels come from the i18n dictionary. */
 export const NAV_LINKS = [
-  { label: "Products", href: "#products" },
-  { label: "Ads", href: "#ads" },
-  { label: "Pricing", href: "#pricing" },
+  { key: "products", href: "#products" },
+  { key: "ads", href: "#ads" },
+  { key: "pricing", href: "#pricing" },
 ] as const;

@@ -5,6 +5,7 @@ import { Search, ShoppingCart, Star, Truck, Wallet } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { useT } from "@/lib/i18n";
 
 type ThemeKey = "Bluewave" | "Sunset" | "Goldenflare";
 
@@ -36,7 +37,8 @@ const TABS: ThemeKey[] = ["Bluewave", "Sunset", "Goldenflare"];
 
 export function StoreTemplates() {
   const [theme, setTheme] = useState<ThemeKey>("Bluewave");
-  const t = THEMES[theme];
+  const t = useT();
+  const th = THEMES[theme];
 
   return (
     <section
@@ -46,10 +48,10 @@ export function StoreTemplates() {
       <div className="container-page">
         <Reveal>
           <h2 className="text-center text-3xl sm:text-4xl">
-            Store templates ready to launch
+            {t.store.title}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-lg text-ink-muted">
-            Pick a theme and generate a high-converting storefront in minutes.
+            {t.store.subtitle}
           </p>
         </Reveal>
 
@@ -92,16 +94,16 @@ export function StoreTemplates() {
 
             {/* storefront header */}
             <div className="flex items-center gap-4 border-b border-border px-5 py-3.5">
-              <span className={`text-lg font-extrabold ${t.accent}`}>
+              <span className={`text-lg font-extrabold ${th.accent}`}>
                 MyStore
               </span>
               <div className="flex h-9 flex-1 items-center gap-2 rounded-lg bg-surface-tint px-3 text-xs text-ink-muted">
                 <Search className="h-3.5 w-3.5" />
-                Search products…
+                {t.store.searchPlaceholder}
               </div>
               <button
                 type="button"
-                aria-label="Cart"
+                aria-label={t.store.cart}
                 className="relative grid h-9 w-9 place-items-center rounded-lg border border-border text-ink"
               >
                 <ShoppingCart className="h-4 w-4" />
@@ -128,11 +130,11 @@ export function StoreTemplates() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
               <div
-                className={`absolute inset-0 bg-gradient-to-r ${t.banner} opacity-90 transition-all duration-500`}
+                className={`absolute inset-0 bg-gradient-to-r ${th.banner} opacity-90 transition-all duration-500`}
               />
               <div className="relative">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/80">
-                Guaranteed purchases
+                {t.store.guaranteed}
               </p>
               <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2">
                 <span className="text-3xl font-extrabold sm:text-4xl">
@@ -154,18 +156,18 @@ export function StoreTemplates() {
                     separator
                     className="font-bold"
                   />{" "}
-                  Orders Delivered
+                  {t.store.ordersDelivered}
                 </span>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm">
                   <Truck className="h-4 w-4" />
-                  FREE SHIPPING
+                  {t.store.freeShipping}
                 </span>
                 <span className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-sm font-semibold backdrop-blur-sm">
                   <Wallet className="h-4 w-4" />
-                  PAY ON DELIVERY
+                  {t.store.payOnDelivery}
                 </span>
               </div>
               </div>
@@ -183,7 +185,7 @@ export function StoreTemplates() {
                   </div>
                   <div className="mx-auto h-2 w-3/4 rounded-full bg-border" />
                   <div
-                    className={`mx-auto mt-2 inline-block rounded-full px-2 py-0.5 text-[11px] font-bold ${t.chip}`}
+                    className={`mx-auto mt-2 inline-block rounded-full px-2 py-0.5 text-[11px] font-bold ${th.chip}`}
                   >
                     $29.99
                   </div>

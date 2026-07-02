@@ -1,27 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { BrandTile } from "@/components/ui/BrandMark";
 import { BRAND } from "@/lib/brand";
-
-const COLUMNS: { title: string; links: string[] }[] = [
-  {
-    title: "Product",
-    links: ["Product database", "Sales tracker", "AI store builder", "Pricing"],
-  },
-  {
-    title: "Ads",
-    links: ["Ad library", "TikTok ads", "Meta ads", "Tracking"],
-  },
-  {
-    title: "Company",
-    links: ["About", "Careers", "Blog", "Contact"],
-  },
-  {
-    title: "Legal",
-    links: ["Privacy", "Terms", "Cookies", "Refunds"],
-  },
-];
+import { useT } from "@/lib/i18n";
 
 export function Footer() {
+  const t = useT();
   const year = 2026;
 
   return (
@@ -37,13 +22,12 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-white/60">
-              The #1 market-analysis platform to spy on ads, track sales, and
-              find winning products instantly.
+              {t.footer.description}
             </p>
           </div>
 
           {/* Link columns */}
-          {COLUMNS.map((column) => (
+          {t.footer.columns.map((column) => (
             <div key={column.title}>
               <h3 className="text-sm font-bold text-white">{column.title}</h3>
               <ul className="mt-4 space-y-3">
@@ -64,17 +48,17 @@ export function Footer() {
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
           <p className="text-sm text-white/50">
-            © {year} {BRAND}. All rights reserved.
+            © {year} {BRAND}. {t.footer.rights}
           </p>
           <div className="flex items-center gap-5 text-sm text-white/50">
             <Link href="#" className="transition-colors hover:text-white">
-              Privacy
+              {t.footer.privacy}
             </Link>
             <Link href="#" className="transition-colors hover:text-white">
-              Terms
+              {t.footer.terms}
             </Link>
             <Link href="#" className="transition-colors hover:text-white">
-              Status
+              {t.footer.status}
             </Link>
           </div>
         </div>

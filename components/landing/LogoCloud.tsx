@@ -1,4 +1,7 @@
+"use client";
+
 import { Reveal } from "@/components/ui/Reveal";
+import { useT } from "@/lib/i18n";
 
 const LOGOS = [
   { name: "TikTok Shop", glyph: "♪" },
@@ -8,12 +11,14 @@ const LOGOS = [
 ];
 
 export function LogoCloud() {
+  const t = useT();
+
   return (
     <section className="bg-surface py-12">
       <div className="container-page">
         <Reveal>
           <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-ink-muted">
-            Access to all platforms
+            {t.logoCloud.label}
           </p>
         </Reveal>
 

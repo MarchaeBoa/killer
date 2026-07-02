@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { Reveal } from "@/components/ui/Reveal";
-import { PRODUCTS } from "@/lib/products";
+import { useProducts, useT } from "@/lib/i18n";
 
 function FilterChip({
   icon,
@@ -34,6 +34,8 @@ function FilterChip({
 
 export function DashboardPreview() {
   const [view, setView] = useState<"grid" | "list">("grid");
+  const t = useT();
+  const products = useProducts();
 
   return (
     <section id="products" className="scroll-mt-24 bg-surface py-12 sm:py-16">
@@ -57,24 +59,24 @@ export function DashboardPreview() {
                   <Search className="h-4 w-4 text-ink-muted" />
                   <input
                     type="text"
-                    placeholder="Search…"
+                    placeholder={t.dashboard.searchPlaceholder}
                     className="w-full bg-transparent text-sm text-ink placeholder:text-ink-muted focus:outline-none"
-                    aria-label="Search products"
+                    aria-label={t.dashboard.searchProducts}
                   />
                 </div>
 
                 <div className="flex flex-wrap items-center gap-2">
                   <FilterChip
                     icon={<Globe className="h-4 w-4" />}
-                    label="Countries"
+                    label={t.dashboard.countries}
                   />
                   <FilterChip
                     icon={<LayoutGrid className="h-4 w-4" />}
-                    label="Platform"
+                    label={t.dashboard.platform}
                   />
                   <FilterChip
                     icon={<SlidersHorizontal className="h-4 w-4" />}
-                    label="Advanced filters"
+                    label={t.dashboard.advancedFilters}
                   />
 
                   <button
@@ -82,14 +84,14 @@ export function DashboardPreview() {
                     className="inline-flex h-11 items-center gap-2 rounded-xl bg-primary px-5 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(29,63,230,0.28)] transition-colors hover:bg-primary-hover"
                   >
                     <Search className="h-4 w-4" />
-                    Search
+                    {t.dashboard.search}
                   </button>
 
                   {/* view toggle */}
                   <div className="inline-flex h-11 items-center rounded-xl border border-border bg-white p-1">
                     <button
                       type="button"
-                      aria-label="Grid view"
+                      aria-label={t.dashboard.gridView}
                       aria-pressed={view === "grid"}
                       onClick={() => setView("grid")}
                       className={`grid h-full w-9 place-items-center rounded-lg transition-colors ${
@@ -102,7 +104,7 @@ export function DashboardPreview() {
                     </button>
                     <button
                       type="button"
-                      aria-label="List view"
+                      aria-label={t.dashboard.listView}
                       aria-pressed={view === "list"}
                       onClick={() => setView("list")}
                       className={`grid h-full w-9 place-items-center rounded-lg transition-colors ${
@@ -125,7 +127,7 @@ export function DashboardPreview() {
                     : "mt-5 grid grid-cols-1 gap-3.5 sm:grid-cols-2"
                 }
               >
-                {PRODUCTS.slice(0, view === "grid" ? 10 : 6).map((product) => (
+                {products.slice(0, view === "grid" ? 10 : 6).map((product) => (
                   <ProductCard
                     key={product.title}
                     product={product}

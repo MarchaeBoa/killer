@@ -5,10 +5,13 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandMark } from "@/components/ui/BrandMark";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { NAV_LINKS } from "@/lib/brand";
+import { useT } from "@/lib/i18n";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const t = useT();
 
   return (
     <header className="sticky top-3 z-50 px-3 sm:top-4 sm:px-4">
@@ -23,7 +26,7 @@ export function Navbar() {
                 href={link.href}
                 className="text-sm font-medium text-ink-muted transition-colors hover:text-ink"
               >
-                {link.label}
+                {t.nav[link.key]}
               </Link>
             </li>
           ))}
@@ -31,18 +34,19 @@ export function Navbar() {
 
         {/* Right actions (desktop) */}
         <div className="hidden items-center gap-2.5 md:flex">
+          <LanguageSwitcher />
           <Button href="/login" variant="outline" size="sm">
-            Log in
+            {t.nav.login}
           </Button>
           <Button href="/signup" variant="primary" size="sm">
-            Sign up
+            {t.nav.signup}
           </Button>
         </div>
 
         {/* Mobile toggle */}
         <button
           type="button"
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="grid h-10 w-10 place-items-center rounded-xl border border-border text-ink md:hidden"
@@ -62,17 +66,23 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className="block rounded-xl px-3 py-3 text-base font-medium text-ink transition-colors hover:bg-primary-soft"
                 >
-                  {link.label}
+                  {t.nav[link.key]}
                 </Link>
               </li>
             ))}
           </ul>
+          <div className="mt-3 flex items-center justify-between">
+            <span className="text-sm font-medium text-ink-muted">
+              {t.nav.language}
+            </span>
+            <LanguageSwitcher />
+          </div>
           <div className="mt-3 grid grid-cols-2 gap-2.5">
             <Button href="/login" variant="outline" size="md">
-              Log in
+              {t.nav.login}
             </Button>
             <Button href="/signup" variant="primary" size="md">
-              Sign up
+              {t.nav.signup}
             </Button>
           </div>
         </div>

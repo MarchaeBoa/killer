@@ -1,10 +1,14 @@
+"use client";
+
 import { Chrome, Hexagon, Puzzle, Star } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { Reveal } from "@/components/ui/Reveal";
 import { BRAND } from "@/lib/brand";
+import { useT } from "@/lib/i18n";
 
 function ExtensionMockup() {
+  const t = useT();
   return (
     <div className="relative w-full max-w-md">
       {/* Browser frame */}
@@ -30,18 +34,18 @@ function ExtensionMockup() {
               <div className="leading-tight">
                 <p className="text-sm font-bold text-ink">{BRAND}</p>
                 <p className="flex items-center gap-1 text-[11px] text-ink-muted">
-                  <Star className="h-3 w-3 fill-current text-amber-400" /> 4.9 ·
-                  Free
+                  <Star className="h-3 w-3 fill-current text-amber-400" /> 4.9 ·{" "}
+                  {t.extension.free}
                 </p>
               </div>
             </div>
             <div className="mt-3 space-y-2">
               <div className="flex items-center justify-between rounded-lg bg-surface-tint px-2.5 py-1.5 text-[11px]">
-                <span className="text-ink-muted">Live sales</span>
+                <span className="text-ink-muted">{t.extension.liveSales}</span>
                 <span className="font-bold text-success">+1,204</span>
               </div>
               <div className="flex items-center justify-between rounded-lg bg-surface-tint px-2.5 py-1.5 text-[11px]">
-                <span className="text-ink-muted">Stock</span>
+                <span className="text-ink-muted">{t.extension.stock}</span>
                 <span className="font-bold text-ink">4,532</span>
               </div>
             </div>
@@ -62,6 +66,7 @@ function ExtensionMockup() {
 }
 
 export function ExtensionBanner() {
+  const t = useT();
   return (
     <section className="bg-surface py-12 sm:py-16">
       <div className="container-page">
@@ -79,18 +84,17 @@ export function ExtensionBanner() {
 
             <div className="relative grid items-center gap-10 lg:grid-cols-2">
               <div className="text-white">
-                <Badge variant="translucent">Install our extension</Badge>
+                <Badge variant="translucent">{t.extension.badge}</Badge>
                 <h2 className="mt-5 max-w-md text-3xl text-white sm:text-4xl">
-                  Discover winning products in seconds.
+                  {t.extension.title}
                 </h2>
                 <p className="mt-4 max-w-md text-base text-white/80">
-                  Install the {BRAND} Chrome extension and take your store to the
-                  next level.
+                  {t.extension.text.replace("{brand}", BRAND)}
                 </p>
                 <div className="mt-7">
                   <Button href="/signup" variant="white" size="lg">
                     <Chrome className="h-5 w-5" />
-                    Free and ready to use
+                    {t.extension.button}
                   </Button>
                 </div>
               </div>

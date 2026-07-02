@@ -1,7 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { useT } from "@/lib/i18n";
 
 export function FinalCta() {
+  const t = useT();
   return (
     <section className="bg-surface py-16 sm:py-24">
       <div className="container-page">
@@ -17,15 +21,14 @@ export function FinalCta() {
             />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl sm:text-4xl lg:text-5xl">
-                Find products and ads in one platform
+                {t.finalCta.title}
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-lg text-ink-muted">
-                Join thousands of sellers using data to launch winning products
-                faster. Start free — no credit card required.
+                {t.finalCta.text}
               </p>
               <div className="mt-9 flex justify-center">
                 <Button href="/signup" size="lg" className="px-12">
-                  Get started
+                  {t.common.getStarted}
                 </Button>
               </div>
             </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -5,20 +7,22 @@ import { Reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/ui/CountUp";
 import { Sparkline } from "@/components/ui/Sparkline";
 import { SmartImage } from "@/components/ui/SmartImage";
+import { useT } from "@/lib/i18n";
 
 function TikTokCard() {
+  const t = useT();
   return (
     <div className="relative mx-auto w-full max-w-sm">
       {/* commission badge */}
       <div className="absolute -left-3 -top-3 z-10 rounded-full text-gradient-badge px-4 py-2 text-sm font-extrabold text-white shadow-soft-lg">
-        +35% COMMISSION
+        {t.tiktok.commissionBadge}
       </div>
 
       <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-soft-lg">
         <div className="relative flex h-48 items-center justify-center overflow-hidden bg-gradient-to-br from-accent-pink/15 to-accent-coral/15">
           <SmartImage
             src="/images/tiktok-lipkit.jpg"
-            alt="Velvet Matte Lip Kit"
+            alt={t.tiktok.productName}
             className="absolute inset-0 h-full w-full object-cover"
             fallback={
               <span className="text-7xl" aria-hidden="true">
@@ -34,19 +38,21 @@ function TikTokCard() {
         <div className="space-y-4 p-5">
           <div className="flex items-start justify-between gap-3">
             <h4 className="text-base font-bold text-ink">
-              Velvet Matte Lip Kit (6-Pack)
+              {t.tiktok.productName}
             </h4>
-            <Badge variant="success">14% Commission</Badge>
+            <Badge variant="success">{t.tiktok.commission}</Badge>
           </div>
 
           <div className="flex items-center justify-between rounded-xl bg-surface-tint p-3">
             <div className="leading-tight">
-              <p className="text-xs font-medium text-ink-muted">Trend</p>
+              <p className="text-xs font-medium text-ink-muted">
+                {t.tiktok.trend}
+              </p>
               <p className="inline-flex items-center gap-1 text-lg font-extrabold text-success">
                 <TrendingUp className="h-4 w-4" />
                 <CountUp value={345} prefix="+" />
                 <span className="text-xs font-medium text-ink-muted">
-                  / 7 Days
+                  {t.tiktok.days}
                 </span>
               </p>
             </div>
@@ -59,7 +65,7 @@ function TikTokCard() {
           </div>
 
           <Button href="/signup" size="md" className="w-full">
-            View on TikTok Shop
+            {t.tiktok.viewButton}
           </Button>
         </div>
       </div>
@@ -68,26 +74,25 @@ function TikTokCard() {
 }
 
 export function FeatureTikTok() {
+  const t = useT();
   return (
     <section className="bg-surface py-16 sm:py-24">
       <div className="container-page grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              TikTok Shop
+              {t.tiktok.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl sm:text-4xl lg:text-[2.6rem] lg:leading-[1.12]">
-              <span className="text-primary">TikTok Shop Products</span>{" "}
-              <span className="text-ink">that Break the Market</span>
+              <span className="text-primary">{t.tiktok.titleA}</span>{" "}
+              <span className="text-ink">{t.tiktok.titleB}</span>
             </h2>
             <p className="mt-5 max-w-md text-lg text-ink-muted">
-              Access an exclusive selection of the best-selling products on
-              TikTok Shop in the US — the perfect chance to replicate these wins
-              in your market.
+              {t.tiktok.text}
             </p>
             <div className="mt-8">
               <Button href="/signup" size="lg">
-                Get started
+                {t.common.getStarted}
               </Button>
             </div>
           </div>

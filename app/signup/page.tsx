@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { BrandTile } from "@/components/ui/BrandMark";
 import { BRAND } from "@/lib/brand";
+import { useT } from "@/lib/i18n";
 
 export default function SignupPage() {
+  const t = useT();
   return (
     <main className="grid min-h-screen place-items-center bg-surface-tint px-5 py-16">
       <div className="w-full max-w-md rounded-2xl border border-border bg-white p-8 shadow-soft">
@@ -13,7 +17,7 @@ export default function SignupPage() {
           className="inline-flex items-center gap-1.5 text-sm font-medium text-ink-muted transition-colors hover:text-ink"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back home
+          {t.auth.back}
         </Link>
 
         <div className="mt-6 flex items-center gap-2.5">
@@ -23,25 +27,23 @@ export default function SignupPage() {
           </span>
         </div>
 
-        <h1 className="mt-6 text-2xl">Create your account</h1>
-        <p className="mt-2 text-sm text-ink-muted">
-          Start finding winning products and ads today.
-        </p>
+        <h1 className="mt-6 text-2xl">{t.auth.signup.title}</h1>
+        <p className="mt-2 text-sm text-ink-muted">{t.auth.signup.subtitle}</p>
 
         <form className="mt-6 space-y-4">
           <div>
             <label className="mb-1.5 block text-sm font-medium text-ink">
-              Email
+              {t.auth.email}
             </label>
             <input
               type="email"
-              placeholder="you@example.com"
+              placeholder={t.auth.emailPlaceholder}
               className="h-11 w-full rounded-xl border border-border bg-surface-tint px-3.5 text-sm text-ink placeholder:text-ink-muted focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
             />
           </div>
           <div>
             <label className="mb-1.5 block text-sm font-medium text-ink">
-              Password
+              {t.auth.password}
             </label>
             <input
               type="password"
@@ -50,14 +52,14 @@ export default function SignupPage() {
             />
           </div>
           <Button size="lg" className="w-full" type="button">
-            Sign up
+            {t.auth.signup.submit}
           </Button>
         </form>
 
         <p className="mt-6 text-center text-sm text-ink-muted">
-          Already have an account?{" "}
+          {t.auth.signup.haveAccount}{" "}
           <Link href="/login" className="font-semibold text-primary">
-            Log in
+            {t.auth.signup.loginLink}
           </Link>
         </p>
       </div>

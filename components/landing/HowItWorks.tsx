@@ -1,6 +1,9 @@
+"use client";
+
 import { Filter, Radio, Rocket } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Sparkline } from "@/components/ui/Sparkline";
+import { useT } from "@/lib/i18n";
 
 function FindMockup() {
   return (
@@ -62,40 +65,25 @@ function LaunchMockup() {
   );
 }
 
-const STEPS = [
-  {
-    title: "Find",
-    description:
-      "Filter by sales, margin, stock and trends, or search by text or image.",
-    mockup: <FindMockup />,
-  },
-  {
-    title: "Validate",
-    description:
-      "Review ads that are already working and turn on tracking to see real movement.",
-    mockup: <ValidateMockup />,
-  },
-  {
-    title: "Launch",
-    description:
-      "Generate a store with AI in minutes, or export the product to your current stack.",
-    mockup: <LaunchMockup />,
-  },
-];
+const MOCKUPS = [<FindMockup key="f" />, <ValidateMockup key="v" />, <LaunchMockup key="l" />];
 
 export function HowItWorks() {
+  const t = useT();
+
   return (
     <section className="bg-surface-tint py-16 sm:py-24">
       <div className="container-page">
         <Reveal>
-          <h2 className="text-center text-3xl sm:text-4xl">How it works</h2>
+          <h2 className="text-center text-3xl sm:text-4xl">
+            {t.howItWorks.title}
+          </h2>
         </Reveal>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {STEPS.map((step, i) => (
+          {t.howItWorks.steps.map((step, i) => (
             <Reveal key={step.title} delay={i * 0.1}>
               <div className="flex h-full flex-col rounded-2xl bg-primary-soft p-5">
-                <div className="mb-5">{step.mockup}</div>
+                <div className="mb-5">{MOCKUPS[i]}</div>
                 <h3 className="text-xl font-extrabold text-primary">
                   {step.title}
                 </h3>
