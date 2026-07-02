@@ -31,10 +31,10 @@ const ADS: Ad[] = [
     tone: "blue",
   },
   {
-    page: "FitGearPro",
+    page: "KitchenHacks",
     badge: "TT",
     badgeClass: "bg-ink",
-    emoji: "🏋️",
+    emoji: "🥕",
     image: "/images/ad-kitchen.jpg",
     caption: "The kitchen gadget everyone is talking about",
     likes: 48200,
