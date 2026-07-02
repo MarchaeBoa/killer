@@ -24,15 +24,20 @@ export interface Dict {
   common: { getStarted: string };
   nav: NavT;
   hero: {
+    livePill: string;
+    titleStart: string;
+    rotate: string[];
+    titleEnd: string;
+    subtitle: string;
+    ctaFree: string;
+    socialProof: string;
     badgeProducts: string;
     badgeAds: string;
-    titlePre: string;
-    titleHl1: string;
-    titleMid: string;
-    titleHl2: string;
-    titleTail: string;
-    subtitle: string;
-    watch: string;
+    panelTitle: string;
+    panelSalesToday: string;
+    panelScanned: string;
+    toast: string;
+    winners: string[];
   };
   logoCloud: { label: string };
   extension: {
@@ -179,16 +184,26 @@ const es: Dict = {
     language: "Idioma",
   },
   hero: {
+    livePill: "EN VIVO · rastreando ahora",
+    titleStart: "Encuentra",
+    rotate: ["productos ganadores", "anuncios virales", "tiendas que venden"],
+    titleEnd: "antes que nadie",
+    subtitle:
+      "La plataforma de análisis de mercado #1: espía anuncios, rastrea ventas en tiempo real y encuentra ganadores antes de que se saturen.",
+    ctaFree: "Comenzar gratis",
+    socialProof: "+12.000 vendedores encuentran ganadores cada día",
     badgeProducts: "Productos",
     badgeAds: "Anuncios",
-    titlePre: "Encuentra ",
-    titleHl1: "PRODUCTOS",
-    titleMid: " y ",
-    titleHl2: "ANUNCIOS",
-    titleTail: " en una sola plataforma",
-    subtitle:
-      "Maximiza tus ventas con la plataforma de análisis de mercado #1 — valida los Anuncios y Productos que mejor funcionan.",
-    watch: "Ver video",
+    panelTitle: "Ganadores de hoy",
+    panelSalesToday: "ventas hoy",
+    panelScanned: "escaneados hoy",
+    toast: "¡Nuevo ganador detectado!",
+    winners: [
+      "Labial Mate 6 uds",
+      "Sérum Ácido Hialurónico",
+      "Paleta Blush & Glow",
+      "Rallador Giratorio",
+    ],
   },
   logoCloud: { label: "Acceso a todas las plataformas" },
   extension: {
@@ -408,16 +423,26 @@ const pt: Dict = {
     language: "Idioma",
   },
   hero: {
+    livePill: "AO VIVO · rastreando agora",
+    titleStart: "Encontre",
+    rotate: ["produtos vencedores", "anúncios virais", "lojas que vendem"],
+    titleEnd: "antes de todo mundo",
+    subtitle:
+      "A plataforma de análise de mercado nº 1: espione anúncios, rastreie vendas em tempo real e ache vencedores antes de saturarem.",
+    ctaFree: "Começar grátis",
+    socialProof: "+12.000 vendedores encontram vencedores todo dia",
     badgeProducts: "Produtos",
     badgeAds: "Anúncios",
-    titlePre: "Encontre ",
-    titleHl1: "PRODUTOS",
-    titleMid: " e ",
-    titleHl2: "ANÚNCIOS",
-    titleTail: " em uma só plataforma",
-    subtitle:
-      "Maximize suas vendas com a plataforma de análise de mercado nº 1 — valide os Anúncios e Produtos que mais performam.",
-    watch: "Ver vídeo",
+    panelTitle: "Vencedores de hoje",
+    panelSalesToday: "vendas hoje",
+    panelScanned: "escaneados hoje",
+    toast: "Novo vencedor detectado!",
+    winners: [
+      "Batom Matte 6 un",
+      "Sérum Ácido Hialurônico",
+      "Paleta Blush & Glow",
+      "Ralador Giratório",
+    ],
   },
   logoCloud: { label: "Acesso a todas as plataformas" },
   extension: {
