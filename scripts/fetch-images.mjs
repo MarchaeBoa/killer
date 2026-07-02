@@ -1,15 +1,24 @@
 #!/usr/bin/env node
 /**
- * Fetch real, commercially-licensed product photos from the Pexels API and save
- * them locally to public/images/ (no hotlinking — the page works offline after).
+ * Fetch real, commercially-licensed product photos and save them locally to
+ * public/images/ (no hotlinking — the page works offline after).
  *
- * Usage:
- *   PEXELS_API_KEY=xxxxx npm run fetch-images          # download missing images
- *   PEXELS_API_KEY=xxxxx npm run fetch-images -- --force   # re-download everything
+ * Works with EITHER Unsplash or Pexels — whichever key you provide:
  *
- * Get a free key at https://www.pexels.com/api/. Slots are defined in
- * public/images/manifest.json. A CREDITS.md is written with photographer
- * attribution (Pexels licence: free for commercial use, attribution appreciated).
+ *   UNSPLASH_ACCESS_KEY=xxxxx npm run fetch-images          # download missing
+ *   PEXELS_API_KEY=xxxxx      npm run fetch-images
+ *   ...add `-- --force` to re-download everything.
+ *
+ * Free keys:
+ *   Unsplash → https://unsplash.com/developers  (use the "Access Key")
+ *   Pexels   → https://www.pexels.com/api/
+ *
+ * NOTE: this must run from a machine/network that can reach the image API.
+ * Locked-down CI or cloud sandboxes often block api.unsplash.com — run it
+ * locally, then commit the downloaded files in public/images/.
+ *
+ * Slots are defined in public/images/manifest.json. Components reference
+ * /images/<file>. A CREDITS.md is written with photographer attribution.
  */
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { existsSync } from "node:fs";
@@ -21,7 +30,8 @@ const ROOT = join(__dirname, "..");
 const IMAGES_DIR = join(ROOT, "public", "images");
 const MANIFEST = join(IMAGES_DIR, "manifest.json");
 
-const API_KEY = process.env.PEXELS_API_KEY;
+const UNSPLASH_KEY = process.env.UNSPLASH_ACCESS_KEY;
+const PEXELS_KEY = process.env.PEXELS_API_KEY;
 const FORCE = process.argv.includes("--force");
 
 function fail(msg) {
@@ -29,24 +39,79 @@ function fail(msg) {
   process.exit(1);
 }
 
-if (!API_KEY) {
-  fail(
-    "PEXELS_API_KEY is not set.\n" +
-      "  1. Create a free key at https://www.pexels.com/api/\n" +
-      "  2. Run:  PEXELS_API_KEY=your_key npm run fetch-images",
-  );
+/** Unsplash: search photos + build a downloadable, correctly-sized URL. */
+function unsplash(key) {
+  // manifest orientations → Unsplash's vocabulary ("square" isn't valid there)
+  const orient = (o) => (o === "landscape" ? "landscape" : "squarish");
+  return {
+    name: "Unsplash",
+    async search(query, orientation) {
+      const url =
+        `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}` +
+        `&per_page=5&content_filter=high&orientation=${orient(orientation)}`;
+      const res = await fetch(url, {
+        headers: { Authorization: `Client-ID ${key}`, "Accept-Version": "v1" },
+      });
+      if (res.status === 401) fail("Unsplash rejected the Access Key (401 Unauthorized).");
+      if (res.status === 403)
+        fail("Unsplash rate limit hit (403). Demo apps allow 50 requests/hour.");
+      if (!res.ok) throw new Error(`Unsplash search failed (${res.status}) for "${query}"`);
+      const data = await res.json();
+      const photo = data.results?.[0];
+      if (!photo) return null;
+      // Derive a sized JPG off the raw URL so square vs landscape both crop well.
+      const [w, h] = orientation === "landscape" ? [1200, 630] : [800, 800];
+      const src = `${photo.urls.raw}&w=${w}&h=${h}&fit=crop&crop=entropy&q=80&fm=jpg`;
+      return {
+        src,
+        author: photo.user?.name ?? "Unknown",
+        authorUrl: photo.user?.links?.html ?? "https://unsplash.com",
+        pageUrl: photo.links?.html ?? "https://unsplash.com",
+      };
+    },
+  };
 }
 
-async function searchPhoto(query, orientation) {
-  const url =
-    `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}` +
-    `&per_page=5&orientation=${orientation}&size=medium`;
-  const res = await fetch(url, { headers: { Authorization: API_KEY } });
-  if (res.status === 401) fail("Pexels rejected the API key (401 Unauthorized).");
-  if (res.status === 429) fail("Pexels rate limit hit (429). Wait an hour or upgrade the key.");
-  if (!res.ok) throw new Error(`Pexels search failed (${res.status}) for "${query}"`);
-  const data = await res.json();
-  return data.photos?.[0] ?? null;
+/** Pexels: search photos + pick a downloadable URL. */
+function pexels(key) {
+  return {
+    name: "Pexels",
+    async search(query, orientation) {
+      const url =
+        `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}` +
+        `&per_page=5&orientation=${orientation === "landscape" ? "landscape" : "square"}&size=medium`;
+      const res = await fetch(url, { headers: { Authorization: key } });
+      if (res.status === 401) fail("Pexels rejected the API key (401 Unauthorized).");
+      if (res.status === 429) fail("Pexels rate limit hit (429). Wait an hour or upgrade the key.");
+      if (!res.ok) throw new Error(`Pexels search failed (${res.status}) for "${query}"`);
+      const data = await res.json();
+      const photo = data.photos?.[0];
+      if (!photo) return null;
+      return {
+        src: orientation === "landscape" ? photo.src.landscape : photo.src.large,
+        author: photo.photographer,
+        authorUrl: photo.photographer_url,
+        pageUrl: photo.url,
+      };
+    },
+  };
+}
+
+// Pick a provider from whichever key is present (Unsplash wins if both set).
+const provider = UNSPLASH_KEY
+  ? unsplash(UNSPLASH_KEY)
+  : PEXELS_KEY
+    ? pexels(PEXELS_KEY)
+    : null;
+
+if (!provider) {
+  fail(
+    "No image API key set. Provide one of:\n" +
+      "  • Unsplash:  UNSPLASH_ACCESS_KEY=your_key npm run fetch-images\n" +
+      "               (free key at https://unsplash.com/developers — use the Access Key)\n" +
+      "  • Pexels:    PEXELS_API_KEY=your_key npm run fetch-images\n" +
+      "               (free key at https://www.pexels.com/api/)",
+  );
 }
 
 async function download(url, dest) {
@@ -60,6 +125,8 @@ async function download(url, dest) {
 async function main() {
   await mkdir(IMAGES_DIR, { recursive: true });
   const { images } = JSON.parse(await readFile(MANIFEST, "utf8"));
+
+  console.log(`Using ${provider.name}.\n`);
 
   const credits = [];
   const weak = [];
@@ -75,17 +142,16 @@ async function main() {
     }
 
     try {
-      const photo = await searchPhoto(query, orientation);
-      if (!photo) {
+      const hit = await provider.search(query, orientation);
+      if (!hit) {
         console.warn(`! no result for "${query}" → ${file}`);
         weak.push({ file, query });
         continue;
       }
-      const srcUrl = orientation === "landscape" ? photo.src.landscape : photo.src.large;
-      const bytes = await download(srcUrl, dest);
-      console.log(`✓ saved  ${file}  (${Math.round(bytes / 1024)} KB) — by ${photo.photographer}`);
+      const bytes = await download(hit.src, dest);
+      console.log(`✓ saved  ${file}  (${Math.round(bytes / 1024)} KB) — by ${hit.author}`);
       credits.push(
-        `- **${file}** — Photo by [${photo.photographer}](${photo.photographer_url}) on [Pexels](${photo.url})`,
+        `- **${file}** — Photo by [${hit.author}](${hit.authorUrl}) on [${provider.name}](${hit.pageUrl})`,
       );
       downloaded++;
     } catch (err) {
@@ -97,7 +163,7 @@ async function main() {
   if (credits.length) {
     const md =
       "# Image credits\n\n" +
-      "All photos are from [Pexels](https://www.pexels.com) (free for commercial use).\n\n" +
+      `Photos fetched from ${provider.name} (free for commercial use).\n\n` +
       credits.join("\n") +
       "\n";
     await writeFile(join(IMAGES_DIR, "CREDITS.md"), md);

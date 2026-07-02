@@ -1,12 +1,19 @@
 # public/images
 
 Real product photos for the landing page live here. They are **not** committed
-as part of the initial build — generate them locally with the Pexels API:
+as part of the initial build — generate them locally with the Unsplash **or**
+Pexels API (whichever key you have):
 
 ```bash
-# free key from https://www.pexels.com/api/
+# Unsplash — free "Access Key" from https://unsplash.com/developers
+UNSPLASH_ACCESS_KEY=your_key npm run fetch-images
+
+# ...or Pexels — free key from https://www.pexels.com/api/
 PEXELS_API_KEY=your_key npm run fetch-images
 ```
+
+> Run this **locally**. Locked-down cloud/CI networks often block
+> `api.unsplash.com`, so the fetch has to leave from a machine that can reach it.
 
 This reads [`manifest.json`](./manifest.json), downloads one photo per slot,
 and writes `CREDITS.md` with attribution. Until you run it, the components fall
